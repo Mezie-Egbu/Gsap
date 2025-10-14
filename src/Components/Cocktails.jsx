@@ -1,20 +1,25 @@
 import { useGSAP } from "@gsap/react";
 import { cocktailLists } from "../Constants";
 import gsap from "gsap";
+import { useMediaQuery } from "react-responsive";
 
 export default function Cocktails() {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const mobile = isMobile ? "#cocktails" : null;
+
   useGSAP(() => {
     gsap
       .timeline({
         scrollTrigger: {
           trigger: "#cocktails",
-          start: "top top",
+          start: "top bottom",
           scrub: true,
           end: "bottom top",
         },
       })
-      .to("#c-leaft-leaf", { y: -300 }, 0)
-      .to("#c-right-leaf", { y: -300 }, 0);
+      .from("#c-left-leaf", { x: -100, y: 100 })
+      .to("#c-right-leaf", { x: 100, y: 100 });
   }, []);
 
   return (

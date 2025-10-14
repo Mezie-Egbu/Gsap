@@ -42,7 +42,7 @@ export default function Hero() {
         },
       })
       .to(".right-leaf", { y: 300 }, 0)
-      .to(".left-leaf", { y: -300 }, 0);
+      .to(".left-leaf", { y: -200 }, 0);
 
     const startVal = isMobile ? "top 50%" : "center 60%";
     const endVal = isMobile ? "120% top" : "bottom top";
