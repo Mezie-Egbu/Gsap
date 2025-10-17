@@ -6,9 +6,8 @@ export default function Navbar() {
   useGSAP(() => {
     const navTween = gsap.timeline({
       scrollTrigger: {
-        trigger: "body",
-        start: "top 10",
-        toggleActions: "play none reverse",
+        trigger: "nav",
+        start: "bottom top",
       },
     });
 
@@ -28,7 +27,7 @@ export default function Navbar() {
     <nav>
       <div className="md:flex justify-around md:m-auto">
         <a
-          href="#home"
+          href="#hero"
           className="flex justify-center font-bold items-center gap-2"
         >
           <img src="/images/logo.png" alt="logo" />
